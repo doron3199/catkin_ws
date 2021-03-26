@@ -1,8 +1,0 @@
-in this porject I build a program that make the turtule bot navigate in my ER.world
-using the turtule bot simolator that use the packege slam_gmappoing I mapped my world.
-then i cheked if the navigation works using tutlebot navigation that using amcl.
-now with both of them i build pick objects, that sending navigation goals and tha packege drive
-the robot to them.  
-also the turtule bot rviz saves a lot of time in confidurations, to not set them every time.
-to sum up i mapped the world using slam, in the gmapping packege. localized using amcl in the 
-turtlebot navigation. and navigatethe robot using tutlebot navigation that lanches from the amcl launch file.
