@@ -1,5 +1,5 @@
 #!/bin/sh
-xterm  -e  " roslaunch turtlebot_gazebo turtlebot_world.launch" &
+xterm -e  " roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=$(rospack find pick_objects)/worlds/ER.world" &
 sleep 15
 xterm  -e  " roslaunch turtlebot_gazebo gmapping_demo.launch" &
 sleep 15

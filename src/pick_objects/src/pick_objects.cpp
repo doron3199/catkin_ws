@@ -28,12 +28,12 @@ int main(int argc, char** argv){
   goal.target_pose.header.stamp = ros::Time::now();
 
   // Define a position and orientation for the robot to reach
-  goal.target_pose.pose.position.x = -1.0;
-  goal.target_pose.pose.position.y = 1.0; 
+  goal.target_pose.pose.position.x = -3.0;
+  goal.target_pose.pose.position.y = 3.0; 
   goal.target_pose.pose.orientation.w = 1.0;
 
    // Send the goal position and orientation for the robot to reach
-  ROS_INFO("Sending goal");
+  ROS_INFO("Sending pickup");
   ac.sendGoal(goal);
 
   // Wait an infinite time for the results
@@ -43,21 +43,19 @@ int main(int argc, char** argv){
   if(ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED){
     ROS_INFO("Hooray, I reached pickup!");
 		n.setParam("isPickUp", true);
-
-  }
-  else
+  } else
     ROS_INFO("I failllleeddd pickup you won this time");
 
   // I need to pick up stuff smh
   ros::Duration(5).sleep(); 
   // Define a position and orientation for the robot to reach goal 2
-  goal.target_pose.pose.position.x = -1.0;
-  goal.target_pose.pose.position.y = -2.0; 
+  goal.target_pose.pose.position.x = -5.0;
+  goal.target_pose.pose.position.y = -9.0; 
   goal.target_pose.pose.orientation.w = 0.0;
   goal.target_pose.pose.orientation.z = 2.7;
 
   // Send the goal position and orientation for the robot to reach goal 2
-  ROS_INFO("Sending goal 2");
+  ROS_INFO("Sending drop");
   ac.sendGoal(goal);
 
   // Wait an infinite time for the results
